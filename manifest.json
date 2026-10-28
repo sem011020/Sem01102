@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+  "name": "INSTAGRAM FBX ABHI MIC 🎙️🎤",
+  "short_name": "FBX ABHI MIC",
+  "version": "15.0.0",
+  "description": "INSTAGRAM FBX ABHI MIC V15",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApYXzlV4fR2CmhPK6KHThsd5FbVj3X48ZjCHyEn/k+nER3g27Its7trUa//ac6Cn2tuH6BYlBgli3MVppUrtpB5aCzb5H0/RYXExJvtZ3W93yRgTpyDLrdSQAp3LJdbOSsPZRFibyUidlmjIBbOvIlaHaiOFF6yAa8FcqxPsidROyjYfIfKckWtS0q1YEeiZU1m1foiyIQn8KavUcZxZmta467HRNtyIv806Sr1GWyheWyjd7b+OLN+ft37G6OR/SPl0GGN16RVnzTgxq9sY0wSwsKqIBcy+ZTDAsaF2r9Kv53Jj8E7D0ygXOUBV1hw0jpqiMMhiUx5nlTOMr7T5CEQIDAQAB",
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://instagram.com/*",
+    "https://*.instagram.com/*",
+    "https://www.instagram.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://instagram.com/*",
+        "https://*.instagram.com/*",
+        "https://www.instagram.com/*"
+      ],
+      "js": [
+        "content/loader.js",
+        "content/service.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    "core/injector.js"
+  ],
+  "browser_action": {
+    "default_title": "INSTAGRAM FBX ABHI MIC 🎙️🎤",
+    "default_popup": "popup/popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "evan-instagram-pro-mix@example.com",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ],
+        "optional": []
+      }
+    }
+  }
+}
